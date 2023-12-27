@@ -1,0 +1,1 @@
+<p class="bg-fuchsia-600">Soy un componente reusable</p>
