@@ -13,12 +13,12 @@
 </script>
 
 <div
-    class="{ $menuFilter ? "" : "xs:hidden"} xs:fixed xs:h-screen xs:w-full xs:top-0 xs:left-0 flex w-full flex-col gap-6 xs:gap-0 overflow-hidden"
+    class="{ $menuFilter ? "" : "xs:hidden"} xs:fixed xs:h-screen xs:w-full xs:top-0 xs:left-0 flex flex-col gap-6 xs:gap-0 overflow-hidden w-full"
 >
     <HeaderFilter />
     <HeaderFilterResponsive/>
     <div
-        class="bg-white flex p-6 flex-col items-start gap-8 rounded-2xl border xs:border-0 xs:rounded-none sm:border-stroke-cards md:border-stroke-cards w-auto overflow-auto"
+        class="bg-white flex p-6 flex-col gap-8 rounded-2xl border xs:border-0 xs:rounded-none sm:border-stroke-cards md:border-stroke-cards w-auto xs:h-full overflow-auto"
     >
         <AppointmentType />
         <Price />

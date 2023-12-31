@@ -14,7 +14,8 @@ export default {
         'accent-green-light': '#ECF2D5',
         'gray': '#D0D5DD',
         'stroke-cards': '#F1F1F1',
-        'stroke-dark': '#8A8987'
+        'stroke-dark': '#8A8987',
+        'gray-300-c' : '#D0D5DD'
       },
       animation: {
         "scroll": "scroll 10s linear"
