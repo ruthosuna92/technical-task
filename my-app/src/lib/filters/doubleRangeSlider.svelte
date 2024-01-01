@@ -1,8 +1,10 @@
 <script>
-	
+	import { minPrice } from "../../stores";
+    import { maxPrice } from "../../stores";
 	export let start = 0;
 	export let end = 1;
 	let leftHandle;
+
 	let body;
 	let slider;
 	function draggable(node) {
@@ -59,18 +61,23 @@
 		};
 	}
 	function setHandlePosition (which) {
+        
 		return function (evt) {
 			const { left, right } = slider.getBoundingClientRect();
 			const parentWidth = right - left;
 			const p = Math.min(Math.max((evt.detail.x - left) / parentWidth, 0), 1);
+            
 			if (which === 'start') {
 				start = p;
-				end = Math.max(end, p);
-                console.log(Math.floor(evt.target.id * 200))
+				end = Math.max(end, p)
+                minPrice.update((n) => n = Math.floor(start * 200))
 			} else {
                 start = Math.min(p, start);
 				end = p;
-                console.log(Math.floor(evt.target.id * 200))
+                maxPrice.update((n) => n = Math.floor(end * 200))
+                console.log(leftHandle)
+                console.log(body.style.cssText)
+                console.log(slider)
 			}
 		}
 	}
@@ -78,6 +85,8 @@
         
 		const { width } = body.getBoundingClientRect();
 		const { left, right } = slider.getBoundingClientRect();
+        
+
 		const parentWidth = right - left;
 		const leftHandleLeft = leftHandle.getBoundingClientRect().left;
 		const pxStart = clamp((leftHandleLeft + event.detail.dx) - left, 0, parentWidth - width);
@@ -86,7 +95,15 @@
 		const pEnd = pxEnd / parentWidth;
 		start = pStart;
 		end = pEnd;
+        
 	}
+
+    const handleMin = (event) => {
+        console.log(event.target.id + "min")
+    }
+    const handleMax = (event) => {
+        console.log(event.target.id + "max")
+    }
 </script>
 
 <div class="double-range-container">
@@ -103,7 +120,7 @@
 			></div>
 		<div
 			class="handle"
-            id={start}
+            id={Math.floor(start * 200)}
 			bind:this={leftHandle}
 			data-which="start"
 			use:draggable
@@ -111,17 +128,17 @@
 			style="
 				left: {100 * start}%
 			"
-		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark">{Math.floor(start*200)}</div></div>
+		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark" on:change={handleMin}>{Math.floor(start*200)}</div></div>
 		<div
 			class="handle"
-            id={end}
+            id={Math.floor(end * 200)}
 			data-which="end"
 			use:draggable
 			on:dragmove|preventDefault|stopPropagation="{setHandlePosition('end')}"
 			style="
 				left: {100 * end}%
 			"
-		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark">{Math.floor(end*200)}</div></div>
+		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark" on:change={handleMax}>{Math.floor(end*200)}</div></div>
 	</div>
 </div>
 
