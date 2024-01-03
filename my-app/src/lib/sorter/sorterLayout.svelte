@@ -56,7 +56,7 @@ let therapistsSorted = $allTherapists;
 </script>
 
 <div
-    class=" { $menuSorter ? "" : "xs:hidden"} xs:fixed xs:h-screen xs:w-screen bg-white justify-center xs:top-0 xs:left-0 flex flex-wrap gap-6 xs:gap-0 overflow-hidden w-full"
+    class=" { $menuSorter ? "" : "xs:hidden"} xs:fixed xs:h-screen xs:w-screen bg-white justify-center xs:top-0 xs:left-0 flex flex-wrap gap-6 xs:gap-0 overflow-hidden md:hidden sm:hidden w-full"
 >
 <div
     class="sm:hidden md:hidden w-full bg-accent-green flex py-[0.875rem] px-4 justify-between"
