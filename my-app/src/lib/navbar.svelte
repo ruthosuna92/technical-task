@@ -1,10 +1,12 @@
 <nav
     class="flex py-6 px-[7.5rem] xs:px-3.5 xs:py-4 justify-center items-center xs:justify-between gap-2.5 md:gap-6 self-stretch bg-white xs:border-b xs:border-stroke-medium"
 >
-    <div class="text-center">
+    <button class="text-center" >
+        <a href="/">
         <p class="font-semibold text-lg">emote</p>
         <p class="text-sm">C A R E</p>
-    </div>
+    </a>
+    </button>
     <ul class="xs:hidden flex justify-center items-center gap-8 flex-[1-0-0]">
         <li>
             <a href="/#"> For Therapist </a>

@@ -15,6 +15,7 @@
 <div
     class="{ $menuFilter ? "" : "xs:hidden"} xs:fixed xs:h-screen xs:w-full xs:top-0 xs:left-0 flex flex-col gap-6 xs:gap-0 overflow-hidden w-full"
 >
+<!-- This is the Header of Filters component when is not responsive -->
     <HeaderFilter />
     <HeaderFilterResponsive/>
     <div

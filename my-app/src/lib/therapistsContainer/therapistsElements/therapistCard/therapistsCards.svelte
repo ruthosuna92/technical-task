@@ -1,10 +1,11 @@
 <script>
-    import therapistsJSON from "../../../../data/therapists.json"
+    import { allTherapists } from "../../../../stores";
     import TherapistCard from "../therapistCard/therapistCard.svelte";
-
-    let therapists = therapistsJSON
+    
+    
+    
 </script>
 
-{#each therapists as therapist}
+{#each $allTherapists as therapist}
 <TherapistCard therapist={therapist}/>
 {/each}

@@ -6,7 +6,7 @@
         "demographic": {
             "location": "Canada",
             "mainLanguage": [
-                "English, Spanish"
+                "English", "Spanish"
             ]
         },
         "email": "jkscheung@emotecare.com",
@@ -83,7 +83,7 @@
         "birthday": "1990-01-01",
         "createdAt": "2023-12-08T13:22:48.577Z",
         "demographic": {
-            "location": "United Kingdom",
+            "location": "United Kingdom (UK)",
             "mainLanguage": "English"
         },
         "email": "eberewill1@gmail.com",

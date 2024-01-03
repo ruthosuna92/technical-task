@@ -1,12 +1,12 @@
 <script>
-	import { minPrice } from "../../stores";
-    import { maxPrice } from "../../stores";
+	// This component was found in svelte.com that is why i didn't use tailwind in this case
+	import { minExp, maxExp, allTherapists} from "../../stores";
 	export let start = 0;
 	export let end = 1;
 	let leftHandle;
-
 	let body;
 	let slider;
+	let therapists = $allTherapists
 	function draggable(node) {
 		let x;
 		let y;
@@ -16,7 +16,7 @@
 			}
 			x = event.clientX;
 			y = event.clientY;
-            console.log(event.target.id)
+            
 			node.dispatchEvent(new CustomEvent('dragstart', {
 				detail: { x, y }
 			}));
@@ -70,14 +70,13 @@
 			if (which === 'start') {
 				start = p;
 				end = Math.max(end, p)
-                minPrice.update((n) => n = Math.floor(start * 200))
+                minExp.update((n) => n = Math.floor(start * 25))
+				allTherapists.set(therapists.filter((therapist) => therapist.profile.yearsOfExperience >= $minExp && therapist.profile.yearsOfExperience <= $maxExp))
 			} else {
-                start = Math.min(p, start);
+				start = Math.min(p, start);
 				end = p;
-                maxPrice.update((n) => n = Math.floor(end * 200))
-                console.log(leftHandle)
-                console.log(body.style.cssText)
-                console.log(slider)
+                maxExp.update((n) => n = Math.floor(end * 25))
+				allTherapists.set(therapists.filter((therapist) => therapist.profile.yearsOfExperience >= $minExp && therapist.profile.yearsOfExperience <= $maxExp))
 			}
 		}
 	}
@@ -98,12 +97,7 @@
         
 	}
 
-    const handleMin = (event) => {
-        console.log(event.target.id + "min")
-    }
-    const handleMax = (event) => {
-        console.log(event.target.id + "max")
-    }
+    
 </script>
 
 <div class="double-range-container">
@@ -128,17 +122,22 @@
 			style="
 				left: {100 * start}%
 			"
-		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark" on:change={handleMin}>{Math.floor(start*200)}</div></div>
+		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark text-smb" >{Math.floor(start*25)}</div></div>
 		<div
 			class="handle"
-            id={Math.floor(end * 200)}
+            id={Math.floor(end * 25)}
 			data-which="end"
 			use:draggable
 			on:dragmove|preventDefault|stopPropagation="{setHandlePosition('end')}"
 			style="
 				left: {100 * end}%
 			"
-		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark" on:change={handleMax}>{Math.floor(end*200)}</div></div>
+		><div class="translate-y-[-150%] translate-x-[-50%] absolute h-[1.61rem] py-0.5 px-4 items-center gap-[0.625] rounded-2xl text-white bg-primary-dark text-smb" >{Math.floor(end*25) === 25 ? "+25" : Math.floor(end*25)}</div></div>
+	</div>
+
+	<div class="flex flex-row justify-between mt-4 text-smb">
+		<h1>0</h1>
+		<h1>+25</h1>
 	</div>
 </div>
 

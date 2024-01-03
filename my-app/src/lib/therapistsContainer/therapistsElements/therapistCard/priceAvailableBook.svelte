@@ -1,3 +1,7 @@
+<script>
+    export let price;
+</script>
+
 <!-- This container has 2 div's 1(Price, next available and date) 2.(Book now button) -->
 <div
     class="flex flex-col w-96 xs:w-full p-8 xs:p-4 xs:pt-0 justify-center items-center gap-6 xs:gap-4 self-stretch rounded-2xl border xs:border-0 bg-white border-stroke-cards shadow-[0_4px_4px_0px_rgba(0,0,0,0.03)]"
@@ -5,8 +9,8 @@
     <!-- This is the container of Price per session and Next available date -->
     <div class="flex flex-col xs:flex-row  items-center gap-2 w-full">
         <div class="flex flex-col justify-center xs:justify-start items-center">
-            <p class="text-1.5xl xs:hidden">£64 GBP</p>
-            <p class="text-xl sm:hidden md:hidden font-semibold">£64.00</p>
+            <p class="text-1.5xl xs:hidden">£{price} GBP</p>
+            <p class="text-xl sm:hidden md:hidden font-semibold">£{price}.00</p>
             <p class="text-base xs:text-sm xs:text-stroke-dark">per session</p>
         </div>
         <div class="sm:hidden md:hidden gap-4 p-4">
