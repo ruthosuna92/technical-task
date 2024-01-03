@@ -12,7 +12,7 @@
     class="flex self-stretch p-8 xs:p-0 flex-col gap-8 xs:gap-2 rounded-2xl border xs:border-0 border-stroke-cards bg-white xs:bg-background sm:shadow-[0_4px_4px_0px_rgba(0,0,0,0.05)] md:shadow-[0_4px_4px_0px_rgba(0,0,0,0.05)] md:w-max md:justify-between"
 >
     <div
-        class="flex flex-wrap  md:flex-row {!yearsOfExperience
+        class="flex flex-wrap xs:flex-col  md:flex-row {!yearsOfExperience
             ? 'flex-col'
             : ''} justify-center sm:justify-between md:justify-between items-center gap-6 md:gap-56  xs:gap-2 self-stretch"
     >

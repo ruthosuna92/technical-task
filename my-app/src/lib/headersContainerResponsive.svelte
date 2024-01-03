@@ -1,12 +1,16 @@
 <script>
-    import { menuFilter } from "../stores"
+    import { menuFilter, menuSorter} from "../stores"
+   
     const handleFilters = () => {
         menuFilter.update((bool) => bool = true)
+    }
+    const handleMenuSort = () => {
+        menuSorter.update((bool) => bool = true)
     }
 
 </script>
 
-<div class="sm:hidden md:hidden flex bg-accent-green-light gap-6 xs:gap-4 md:justify-between sm:justify-between xs:flex-col relative">
+<div class="sm:hidden md:hidden flex bg-background gap-6 xs:gap-4 md:justify-between sm:justify-between xs:flex-col relative">
     <span class="text-xl xs:hidden font-semibold text-primary-dark sm:mr-40 md:mr-12 ">
         Let's discover your next therapist
     </span>
@@ -16,13 +20,14 @@
         Discover your next therapist
     </span>
     <div class="flex items-center justify-center gap-6 xs:gap-4">
-        <select
+        <button
             name="order"
             id="order"
-            class="rounded-full flex h-10 py-2 px-6  gap-4 border border-stroke-medium shadow-[0_4px_4px_0px_rgba(0,0,0,0.03)]"
+            class="rounded-full flex h-10 py-2 px-6 bg-white  gap-4 border border-stroke-medium shadow-[0_4px_4px_0px_rgba(0,0,0,0.03)]"
+            on:click={handleMenuSort}
         >
-            <option value=""> Sort by </option>
-        </select>
+        Sort by
+        </button>
         <button
             class="bg-white rounded-full flex h-10 py-2 px-6 gap-4 border border-stroke-medium shadow-[0_4px_4px_0px_rgba(0,0,0,0.03)]" 
             on:click={handleFilters}

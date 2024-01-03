@@ -7,7 +7,7 @@
 </script>
 
 <div
-    class="sm:hidden md:hidden bg-accent-green flex py-[0.875rem] px-4 justify-between"
+    class="sm:hidden md:hidden w-full bg-accent-green flex py-[0.875rem] px-4 justify-between"
 >
     <button class="flex justify-center items-center gap-[0.62rem]" on:click={handleMenu}>
         <svg

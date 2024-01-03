@@ -112,7 +112,7 @@
 </script>
 
 <div
-    class="bg-white xs:bg-accent-green-light flex w-full p-8 xs:p-0 flex-col items-start gap-4 rounded-2xl border xs:border-0 xs:shadow-[0_0px_0px_0px_rgba(0,0,0,0)] shadow-[0_4px_4px_0px_rgba(0,0,0,0.05)] border-stroke-cards overflow-hidden xs:overflow-x-auto relative"
+    class="bg-white xs:bg-background flex w-full p-8 xs:p-0 flex-col items-start gap-4 rounded-2xl border xs:border-0 xs:shadow-[0_0px_0px_0px_rgba(0,0,0,0)] shadow-[0_4px_4px_0px_rgba(0,0,0,0.05)] border-stroke-cards overflow-hidden xs:overflow-x-auto relative"
 >
     <p class="sticky text-base font-semibold">30 second introduction videos</p>
     <div class="flex flex-row xs:gap-4">

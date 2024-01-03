@@ -45,9 +45,9 @@ export default {
       '5xl': '3.052rem',
     },
     screens: {
-      'xs': {'max': '360px'},
+      'xs': {'max': '1024px'},
 
-      'sm': {'min': '361px','max': '1440px'},
+      'sm': {'min': '1025px','max': '1440px'},
      
       'md': {'min': '1441px'},
 

@@ -68,7 +68,7 @@
             <select
                 name="order"
                 id="order"
-                class="border-0 bg-transparent focus:outline-none focus:ring-0 focus:border-0 hover:cursor-pointer"
+                class=" border-0 bg-transparent focus:outline-none focus:ring-0 focus:border-0 hover:cursor-pointer"
                 on:change={handleSort}
             >
                 <option value=""> </option>

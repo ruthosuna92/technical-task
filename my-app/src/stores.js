@@ -16,6 +16,8 @@ export const therapistById = writable({})
 
 export const menuFilter = writable(false);
 
+export const menuSorter = writable(false)
+
 export const appointmentType = writable({
     checked: false,
     checked1: false
